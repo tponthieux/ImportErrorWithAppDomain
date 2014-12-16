@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D43B4BD-DCBA-4DC3-99F1-6DBC7D1CBE71}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IronPythonInAppDomain</RootNamespace>
+    <AssemblyName>IronPythonInAppDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPython, Version=2.7.5.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\vendor\Microsoft\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.5.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\vendor\Microsoft\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\vendor\Microsoft\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\vendor\Microsoft\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\vendor\nunit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="ScriptEvaluatorTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptEvaluator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="standard_library\abc.py" />
+    <Content Include="standard_library\aifc.py" />
+    <Content Include="standard_library\antigravity.py" />
+    <Content Include="standard_library\anydbm.py" />
+    <Content Include="standard_library\argparse.py" />
+    <Content Include="standard_library\ast.py" />
+    <Content Include="standard_library\asynchat.py" />
+    <Content Include="standard_library\asyncore.py" />
+    <Content Include="standard_library\atexit.py" />
+    <Content Include="standard_library\audiodev.py" />
+    <Content Include="standard_library\base64.py" />
+    <Content Include="standard_library\BaseHTTPServer.py" />
+    <Content Include="standard_library\Bastion.py" />
+    <Content Include="standard_library\bdb.py" />
+    <Content Include="standard_library\binhex.py" />
+    <Content Include="standard_library\bisect.py" />
+    <Content Include="standard_library\calendar.py" />
+    <Content Include="standard_library\cgi.py" />
+    <Content Include="standard_library\CGIHTTPServer.py" />
+    <Content Include="standard_library\cgitb.py" />
+    <Content Include="standard_library\chunk.py" />
+    <Content Include="standard_library\cmd.py" />
+    <Content Include="standard_library\code.py" />
+    <Content Include="standard_library\codecs.py" />
+    <Content Include="standard_library\codeop.py" />
+    <Content Include="standard_library\collections.py" />
+    <Content Include="standard_library\colorsys.py" />
+    <Content Include="standard_library\commands.py" />
+    <Content Include="standard_library\compileall.py" />
+    <Content Include="standard_library\ConfigParser.py" />
+    <Content Include="standard_library\contextlib.py" />
+    <Content Include="standard_library\Cookie.py" />
+    <Content Include="standard_library\cookielib.py" />
+    <Content Include="standard_library\copy.py" />
+    <Content Include="standard_library\csv.py" />
+    <Content Include="standard_library\ctypes\macholib\dyld.py" />
+    <Content Include="standard_library\ctypes\macholib\dylib.py" />
+    <Content Include="standard_library\ctypes\macholib\framework.py" />
+    <Content Include="standard_library\ctypes\macholib\__init__.py" />
+    <Content Include="standard_library\ctypes\util.py" />
+    <Content Include="standard_library\ctypes\wintypes.py" />
+    <Content Include="standard_library\ctypes\_endian.py" />
+    <Content Include="standard_library\ctypes\__init__.py" />
+    <Content Include="standard_library\decimal.py" />
+    <Content Include="standard_library\difflib.py" />
+    <Content Include="standard_library\dircache.py" />
+    <Content Include="standard_library\dis.py" />
+    <Content Include="standard_library\distutils\archive_util.py" />
+    <Content Include="standard_library\distutils\bcppcompiler.py" />
+    <Content Include="standard_library\distutils\ccompiler.py" />
+    <Content Include="standard_library\distutils\cmd.py" />
+    <Content Include="standard_library\distutils\command\bdist.py" />
+    <Content Include="standard_library\distutils\command\bdist_dumb.py" />
+    <Content Include="standard_library\distutils\command\bdist_rpm.py" />
+    <Content Include="standard_library\distutils\command\bdist_wininst.py" />
+    <Content Include="standard_library\distutils\command\build.py" />
+    <Content Include="standard_library\distutils\command\build_clib.py" />
+    <Content Include="standard_library\distutils\command\build_ext.py" />
+    <Content Include="standard_library\distutils\command\build_py.py" />
+    <Content Include="standard_library\distutils\command\build_scripts.py" />
+    <Content Include="standard_library\distutils\command\check.py" />
+    <Content Include="standard_library\distutils\command\clean.py" />
+    <Content Include="standard_library\distutils\command\config.py" />
+    <Content Include="standard_library\distutils\command\install.py" />
+    <Content Include="standard_library\distutils\command\install_data.py" />
+    <Content Include="standard_library\distutils\command\install_egg_info.py" />
+    <Content Include="standard_library\distutils\command\install_headers.py" />
+    <Content Include="standard_library\distutils\command\install_lib.py" />
+    <Content Include="standard_library\distutils\command\install_scripts.py" />
+    <Content Include="standard_library\distutils\command\register.py" />
+    <Content Include="standard_library\distutils\command\sdist.py" />
+    <Content Include="standard_library\distutils\command\upload.py" />
+    <Content Include="standard_library\distutils\command\__init__.py" />
+    <Content Include="standard_library\distutils\config.py" />
+    <Content Include="standard_library\distutils\core.py" />
+    <Content Include="standard_library\distutils\cygwinccompiler.py" />
+    <Content Include="standard_library\distutils\debug.py" />
+    <Content Include="standard_library\distutils\dep_util.py" />
+    <Content Include="standard_library\distutils\dir_util.py" />
+    <Content Include="standard_library\distutils\dist.py" />
+    <Content Include="standard_library\distutils\emxccompiler.py" />
+    <Content Include="standard_library\distutils\errors.py" />
+    <Content Include="standard_library\distutils\extension.py" />
+    <Content Include="standard_library\distutils\fancy_getopt.py" />
+    <Content Include="standard_library\distutils\filelist.py" />
+    <Content Include="standard_library\distutils\file_util.py" />
+    <Content Include="standard_library\distutils\log.py" />
+    <Content Include="standard_library\distutils\msvccompiler.py" />
+    <Content Include="standard_library\distutils\spawn.py" />
+    <Content Include="standard_library\distutils\sysconfig.py" />
+    <Content Include="standard_library\distutils\text_file.py" />
+    <Content Include="standard_library\distutils\unixccompiler.py" />
+    <Content Include="standard_library\distutils\util.py" />
+    <Content Include="standard_library\distutils\version.py" />
+    <Content Include="standard_library\distutils\versionpredicate.py" />
+    <Content Include="standard_library\distutils\__init__.py" />
+    <Content Include="standard_library\doctest.py" />
+    <Content Include="standard_library\DocXMLRPCServer.py" />
+    <Content Include="standard_library\dumbdbm.py" />
+    <Content Include="standard_library\dummy_thread.py" />
+    <Content Include="standard_library\dummy_threading.py" />
+    <Content Include="standard_library\email\base64mime.py" />
+    <Content Include="standard_library\email\charset.py" />
+    <Content Include="standard_library\email\encoders.py" />
+    <Content Include="standard_library\email\errors.py" />
+    <Content Include="standard_library\email\feedparser.py" />
+    <Content Include="standard_library\email\generator.py" />
+    <Content Include="standard_library\email\header.py" />
+    <Content Include="standard_library\email\iterators.py" />
+    <Content Include="standard_library\email\message.py" />
+    <Content Include="standard_library\email\mime\application.py" />
+    <Content Include="standard_library\email\mime\audio.py" />
+    <Content Include="standard_library\email\mime\base.py" />
+    <Content Include="standard_library\email\mime\image.py" />
+    <Content Include="standard_library\email\mime\message.py" />
+    <Content Include="standard_library\email\mime\multipart.py" />
+    <Content Include="standard_library\email\mime\nonmultipart.py" />
+    <Content Include="standard_library\email\mime\text.py" />
+    <Content Include="standard_library\email\mime\__init__.py" />
+    <Content Include="standard_library\email\parser.py" />
+    <Content Include="standard_library\email\quoprimime.py" />
+    <Content Include="standard_library\email\utils.py" />
+    <Content Include="standard_library\email\_parseaddr.py" />
+    <Content Include="standard_library\email\__init__.py" />
+    <Content Include="standard_library\encodings\aliases.py" />
+    <Content Include="standard_library\encodings\ascii.py" />
+    <Content Include="standard_library\encodings\base64_codec.py" />
+    <Content Include="standard_library\encodings\charmap.py" />
+    <Content Include="standard_library\encodings\cp037.py" />
+    <Content Include="standard_library\encodings\cp1006.py" />
+    <Content Include="standard_library\encodings\cp1026.py" />
+    <Content Include="standard_library\encodings\cp1140.py" />
+    <Content Include="standard_library\encodings\cp1250.py" />
+    <Content Include="standard_library\encodings\cp1251.py" />
+    <Content Include="standard_library\encodings\cp1252.py" />
+    <Content Include="standard_library\encodings\cp1253.py" />
+    <Content Include="standard_library\encodings\cp1254.py" />
+    <Content Include="standard_library\encodings\cp1255.py" />
+    <Content Include="standard_library\encodings\cp1256.py" />
+    <Content Include="standard_library\encodings\cp1257.py" />
+    <Content Include="standard_library\encodings\cp1258.py" />
+    <Content Include="standard_library\encodings\cp424.py" />
+    <Content Include="standard_library\encodings\cp437.py" />
+    <Content Include="standard_library\encodings\cp500.py" />
+    <Content Include="standard_library\encodings\cp720.py" />
+    <Content Include="standard_library\encodings\cp737.py" />
+    <Content Include="standard_library\encodings\cp775.py" />
+    <Content Include="standard_library\encodings\cp850.py" />
+    <Content Include="standard_library\encodings\cp852.py" />
+    <Content Include="standard_library\encodings\cp855.py" />
+    <Content Include="standard_library\encodings\cp856.py" />
+    <Content Include="standard_library\encodings\cp857.py" />
+    <Content Include="standard_library\encodings\cp858.py" />
+    <Content Include="standard_library\encodings\cp860.py" />
+    <Content Include="standard_library\encodings\cp861.py" />
+    <Content Include="standard_library\encodings\cp862.py" />
+    <Content Include="standard_library\encodings\cp863.py" />
+    <Content Include="standard_library\encodings\cp864.py" />
+    <Content Include="standard_library\encodings\cp865.py" />
+    <Content Include="standard_library\encodings\cp866.py" />
+    <Content Include="standard_library\encodings\cp869.py" />
+    <Content Include="standard_library\encodings\cp874.py" />
+    <Content Include="standard_library\encodings\cp875.py" />
+    <Content Include="standard_library\encodings\hex_codec.py" />
+    <Content Include="standard_library\encodings\hp_roman8.py" />
+    <Content Include="standard_library\encodings\iso8859_1.py" />
+    <Content Include="standard_library\encodings\iso8859_10.py" />
+    <Content Include="standard_library\encodings\iso8859_11.py" />
+    <Content Include="standard_library\encodings\iso8859_13.py" />
+    <Content Include="standard_library\encodings\iso8859_14.py" />
+    <Content Include="standard_library\encodings\iso8859_15.py" />
+    <Content Include="standard_library\encodings\iso8859_16.py" />
+    <Content Include="standard_library\encodings\iso8859_2.py" />
+    <Content Include="standard_library\encodings\iso8859_3.py" />
+    <Content Include="standard_library\encodings\iso8859_4.py" />
+    <Content Include="standard_library\encodings\iso8859_5.py" />
+    <Content Include="standard_library\encodings\iso8859_6.py" />
+    <Content Include="standard_library\encodings\iso8859_7.py" />
+    <Content Include="standard_library\encodings\iso8859_8.py" />
+    <Content Include="standard_library\encodings\iso8859_9.py" />
+    <Content Include="standard_library\encodings\koi8_r.py" />
+    <Content Include="standard_library\encodings\koi8_u.py" />
+    <Content Include="standard_library\encodings\latin_1.py" />
+    <Content Include="standard_library\encodings\mac_arabic.py" />
+    <Content Include="standard_library\encodings\mac_centeuro.py" />
+    <Content Include="standard_library\encodings\mac_croatian.py" />
+    <Content Include="standard_library\encodings\mac_cyrillic.py" />
+    <Content Include="standard_library\encodings\mac_farsi.py" />
+    <Content Include="standard_library\encodings\mac_greek.py" />
+    <Content Include="standard_library\encodings\mac_iceland.py" />
+    <Content Include="standard_library\encodings\mac_latin2.py" />
+    <Content Include="standard_library\encodings\mac_roman.py" />
+    <Content Include="standard_library\encodings\mac_romanian.py" />
+    <Content Include="standard_library\encodings\mac_turkish.py" />
+    <Content Include="standard_library\encodings\mbcs.py" />
+    <Content Include="standard_library\encodings\palmos.py" />
+    <Content Include="standard_library\encodings\ptcp154.py" />
+    <Content Include="standard_library\encodings\punycode.py" />
+    <Content Include="standard_library\encodings\quopri_codec.py" />
+    <Content Include="standard_library\encodings\raw_unicode_escape.py" />
+    <Content Include="standard_library\encodings\rot_13.py" />
+    <Content Include="standard_library\encodings\string_escape.py" />
+    <Content Include="standard_library\encodings\tis_620.py" />
+    <Content Include="standard_library\encodings\undefined.py" />
+    <Content Include="standard_library\encodings\unicode_escape.py" />
+    <Content Include="standard_library\encodings\unicode_internal.py" />
+    <Content Include="standard_library\encodings\utf_16.py" />
+    <Content Include="standard_library\encodings\utf_16_be.py" />
+    <Content Include="standard_library\encodings\utf_16_le.py" />
+    <Content Include="standard_library\encodings\utf_32.py" />
+    <Content Include="standard_library\encodings\utf_32_le.py" />
+    <Content Include="standard_library\encodings\utf_7.py" />
+    <Content Include="standard_library\encodings\utf_8.py" />
+    <Content Include="standard_library\encodings\utf_8_sig.py" />
+    <Content Include="standard_library\encodings\uu_codec.py" />
+    <Content Include="standard_library\encodings\zlib_codec.py" />
+    <Content Include="standard_library\encodings\__init__.py" />
+    <Content Include="standard_library\filecmp.py" />
+    <Content Include="standard_library\fileinput.py" />
+    <Content Include="standard_library\fnmatch.py" />
+    <Content Include="standard_library\formatter.py" />
+    <Content Include="standard_library\fpformat.py" />
+    <Content Include="standard_library\fractions.py" />
+    <Content Include="standard_library\ftplib.py" />
+    <Content Include="standard_library\functools.py" />
+    <Content Include="standard_library\genericpath.py" />
+    <Content Include="standard_library\getopt.py" />
+    <Content Include="standard_library\getpass.py" />
+    <Content Include="standard_library\gettext.py" />
+    <Content Include="standard_library\glob.py" />
+    <Content Include="standard_library\gzip.py" />
+    <Content Include="standard_library\hashlib.py" />
+    <Content Include="standard_library\heapq.py" />
+    <Content Include="standard_library\hmac.py" />
+    <Content Include="standard_library\htmlentitydefs.py" />
+    <Content Include="standard_library\htmllib.py" />
+    <Content Include="standard_library\HTMLParser.py" />
+    <Content Include="standard_library\httplib.py" />
+    <Content Include="standard_library\ihooks.py" />
+    <Content Include="standard_library\imaplib.py" />
+    <Content Include="standard_library\imghdr.py" />
+    <Content Include="standard_library\importlib\__init__.py" />
+    <Content Include="standard_library\imputil.py" />
+    <Content Include="standard_library\inspect.py" />
+    <Content Include="standard_library\io.py" />
+    <Content Include="standard_library\json\decoder.py" />
+    <Content Include="standard_library\json\encoder.py" />
+    <Content Include="standard_library\json\scanner.py" />
+    <Content Include="standard_library\json\tool.py" />
+    <Content Include="standard_library\json\__init__.py" />
+    <Content Include="standard_library\keyword.py" />
+    <Content Include="standard_library\lib2to3\btm_matcher.py" />
+    <Content Include="standard_library\lib2to3\btm_utils.py" />
+    <Content Include="standard_library\lib2to3\fixer_base.py" />
+    <Content Include="standard_library\lib2to3\fixer_util.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_apply.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_basestring.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_buffer.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_callable.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_dict.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_except.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_exec.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_execfile.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_exitfunc.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_filter.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_funcattrs.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_future.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_getcwdu.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_has_key.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_idioms.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_import.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_imports.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_imports2.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_input.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_intern.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_isinstance.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_itertools.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_itertools_imports.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_long.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_map.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_metaclass.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_methodattrs.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_ne.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_next.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_nonzero.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_numliterals.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_operator.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_paren.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_print.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_raise.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_raw_input.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_reduce.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_renames.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_repr.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_set_literal.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_standarderror.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_sys_exc.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_throw.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_tuple_params.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_types.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_unicode.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_urllib.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_ws_comma.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_xrange.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_xreadlines.py" />
+    <Content Include="standard_library\lib2to3\fixes\fix_zip.py" />
+    <Content Include="standard_library\lib2to3\fixes\__init__.py" />
+    <Content Include="standard_library\lib2to3\main.py" />
+    <Content Include="standard_library\lib2to3\patcomp.py" />
+    <Content Include="standard_library\lib2to3\pgen2\conv.py" />
+    <Content Include="standard_library\lib2to3\pgen2\driver.py" />
+    <Content Include="standard_library\lib2to3\pgen2\grammar.py" />
+    <Content Include="standard_library\lib2to3\pgen2\literals.py" />
+    <Content Include="standard_library\lib2to3\pgen2\parse.py" />
+    <Content Include="standard_library\lib2to3\pgen2\pgen.py" />
+    <Content Include="standard_library\lib2to3\pgen2\token.py" />
+    <Content Include="standard_library\lib2to3\pgen2\tokenize.py" />
+    <Content Include="standard_library\lib2to3\pgen2\__init__.py" />
+    <Content Include="standard_library\lib2to3\pygram.py" />
+    <Content Include="standard_library\lib2to3\pytree.py" />
+    <Content Include="standard_library\lib2to3\refactor.py" />
+    <Content Include="standard_library\lib2to3\__init__.py" />
+    <Content Include="standard_library\lib2to3\__main__.py" />
+    <Content Include="standard_library\linecache.py" />
+    <Content Include="standard_library\locale.py" />
+    <Content Include="standard_library\logging\config.py" />
+    <Content Include="standard_library\logging\handlers.py" />
+    <Content Include="standard_library\logging\__init__.py" />
+    <Content Include="standard_library\macpath.py" />
+    <Content Include="standard_library\macurl2path.py" />
+    <Content Include="standard_library\mailbox.py" />
+    <Content Include="standard_library\mailcap.py" />
+    <Content Include="standard_library\markupbase.py" />
+    <Content Include="standard_library\md5.py" />
+    <Content Include="standard_library\mhlib.py" />
+    <Content Include="standard_library\mimetools.py" />
+    <Content Include="standard_library\mimetypes.py" />
+    <Content Include="standard_library\MimeWriter.py" />
+    <Content Include="standard_library\mimify.py" />
+    <Content Include="standard_library\modulefinder.py" />
+    <Content Include="standard_library\multifile.py" />
+    <Content Include="standard_library\mutex.py" />
+    <Content Include="standard_library\netrc.py" />
+    <Content Include="standard_library\new.py" />
+    <Content Include="standard_library\nntplib.py" />
+    <Content Include="standard_library\ntpath.py" />
+    <Content Include="standard_library\nturl2path.py" />
+    <Content Include="standard_library\numbers.py" />
+    <Content Include="standard_library\opcode.py" />
+    <Content Include="standard_library\optparse.py" />
+    <Content Include="standard_library\os.py" />
+    <Content Include="standard_library\os2emxpath.py" />
+    <Content Include="standard_library\pdb.py" />
+    <Content Include="standard_library\pickle.py" />
+    <Content Include="standard_library\pickletools.py" />
+    <Content Include="standard_library\pipes.py" />
+    <Content Include="standard_library\pkgutil.py" />
+    <Content Include="standard_library\platform.py" />
+    <Content Include="standard_library\plistlib.py" />
+    <Content Include="standard_library\popen2.py" />
+    <Content Include="standard_library\poplib.py" />
+    <Content Include="standard_library\posixfile.py" />
+    <Content Include="standard_library\posixpath.py" />
+    <Content Include="standard_library\pprint.py" />
+    <Content Include="standard_library\profile.py" />
+    <Content Include="standard_library\pstats.py" />
+    <Content Include="standard_library\pyclbr.py" />
+    <Content Include="standard_library\pydoc.py" />
+    <Content Include="standard_library\pydoc_data\topics.py" />
+    <Content Include="standard_library\pydoc_data\__init__.py" />
+    <Content Include="standard_library\py_compile.py" />
+    <Content Include="standard_library\Queue.py" />
+    <Content Include="standard_library\quopri.py" />
+    <Content Include="standard_library\random.py" />
+    <Content Include="standard_library\repr.py" />
+    <Content Include="standard_library\rexec.py" />
+    <Content Include="standard_library\rfc822.py" />
+    <Content Include="standard_library\rlcompleter.py" />
+    <Content Include="standard_library\robotparser.py" />
+    <Content Include="standard_library\runpy.py" />
+    <Content Include="standard_library\sched.py" />
+    <Content Include="standard_library\sets.py" />
+    <Content Include="standard_library\sgmllib.py" />
+    <Content Include="standard_library\sha.py" />
+    <Content Include="standard_library\shelve.py" />
+    <Content Include="standard_library\shlex.py" />
+    <Content Include="standard_library\shutil.py" />
+    <Content Include="standard_library\SimpleHTTPServer.py" />
+    <Content Include="standard_library\SimpleXMLRPCServer.py" />
+    <Content Include="standard_library\site-packages\README.txt" />
+    <Content Include="standard_library\site.py" />
+    <Content Include="standard_library\smtpd.py" />
+    <Content Include="standard_library\smtplib.py" />
+    <Content Include="standard_library\sndhdr.py" />
+    <Content Include="standard_library\SocketServer.py" />
+    <Content Include="standard_library\sqlite3\dbapi2.py" />
+    <Content Include="standard_library\sqlite3\dump.py" />
+    <Content Include="standard_library\sqlite3\__init__.py" />
+    <Content Include="standard_library\sre_compile.py" />
+    <Content Include="standard_library\sre_constants.py" />
+    <Content Include="standard_library\sre_parse.py" />
+    <Content Include="standard_library\ssl.py" />
+    <Content Include="standard_library\stat.py" />
+    <Content Include="standard_library\statvfs.py" />
+    <Content Include="standard_library\string.py" />
+    <Content Include="standard_library\StringIO.py" />
+    <Content Include="standard_library\stringold.py" />
+    <Content Include="standard_library\struct.py" />
+    <Content Include="standard_library\subprocess.py" />
+    <Content Include="standard_library\sunau.py" />
+    <Content Include="standard_library\sunaudio.py" />
+    <Content Include="standard_library\symbol.py" />
+    <Content Include="standard_library\sysconfig.py" />
+    <Content Include="standard_library\tabnanny.py" />
+    <Content Include="standard_library\tarfile.py" />
+    <Content Include="standard_library\telnetlib.py" />
+    <Content Include="standard_library\tempfile.py" />
+    <Content Include="standard_library\textwrap.py" />
+    <Content Include="standard_library\this.py" />
+    <Content Include="standard_library\threading.py" />
+    <Content Include="standard_library\timeit.py" />
+    <Content Include="standard_library\toaiff.py" />
+    <Content Include="standard_library\token.py" />
+    <Content Include="standard_library\tokenize.py" />
+    <Content Include="standard_library\trace.py" />
+    <Content Include="standard_library\traceback.py" />
+    <Content Include="standard_library\types.py" />
+    <Content Include="standard_library\unittest\case.py" />
+    <Content Include="standard_library\unittest\loader.py" />
+    <Content Include="standard_library\unittest\main.py" />
+    <Content Include="standard_library\unittest\result.py" />
+    <Content Include="standard_library\unittest\runner.py" />
+    <Content Include="standard_library\unittest\signals.py" />
+    <Content Include="standard_library\unittest\suite.py" />
+    <Content Include="standard_library\unittest\util.py" />
+    <Content Include="standard_library\unittest\__init__.py" />
+    <Content Include="standard_library\unittest\__main__.py" />
+    <Content Include="standard_library\urllib.py" />
+    <Content Include="standard_library\urllib2.py" />
+    <Content Include="standard_library\urlparse.py" />
+    <Content Include="standard_library\user.py" />
+    <Content Include="standard_library\UserDict.py" />
+    <Content Include="standard_library\UserList.py" />
+    <Content Include="standard_library\UserString.py" />
+    <Content Include="standard_library\uu.py" />
+    <Content Include="standard_library\uuid.py" />
+    <Content Include="standard_library\warnings.py" />
+    <Content Include="standard_library\wave.py" />
+    <Content Include="standard_library\weakref.py" />
+    <Content Include="standard_library\webbrowser.py" />
+    <Content Include="standard_library\whichdb.py" />
+    <Content Include="standard_library\wsgiref\handlers.py" />
+    <Content Include="standard_library\wsgiref\headers.py" />
+    <Content Include="standard_library\wsgiref\simple_server.py" />
+    <Content Include="standard_library\wsgiref\util.py" />
+    <Content Include="standard_library\wsgiref\validate.py" />
+    <Content Include="standard_library\wsgiref\__init__.py" />
+    <Content Include="standard_library\xdrlib.py" />
+    <Content Include="standard_library\xmllib.py" />
+    <Content Include="standard_library\xmlrpclib.py" />
+    <Content Include="standard_library\xml\dom\domreg.py" />
+    <Content Include="standard_library\xml\dom\minicompat.py" />
+    <Content Include="standard_library\xml\dom\minidom.py" />
+    <Content Include="standard_library\xml\dom\NodeFilter.py" />
+    <Content Include="standard_library\xml\dom\pulldom.py" />
+    <Content Include="standard_library\xml\dom\xmlbuilder.py" />
+    <Content Include="standard_library\xml\dom\__init__.py" />
+    <Content Include="standard_library\xml\etree\ElementInclude.py" />
+    <Content Include="standard_library\xml\etree\ElementPath.py" />
+    <Content Include="standard_library\xml\etree\ElementTree.py" />
+    <Content Include="standard_library\xml\etree\SimpleXMLTreeBuilder.py" />
+    <Content Include="standard_library\xml\etree\__init__.py" />
+    <Content Include="standard_library\xml\parsers\__init__.py" />
+    <Content Include="standard_library\xml\sax\handler.py" />
+    <Content Include="standard_library\xml\sax\saxutils.py" />
+    <Content Include="standard_library\xml\sax\xmlreader.py" />
+    <Content Include="standard_library\xml\sax\_exceptions.py" />
+    <Content Include="standard_library\xml\sax\__init__.py" />
+    <Content Include="standard_library\xml\__init__.py" />
+    <Content Include="standard_library\zipfile.py" />
+    <Content Include="standard_library\_abcoll.py" />
+    <Content Include="standard_library\_LWPCookieJar.py" />
+    <Content Include="standard_library\_MozillaCookieJar.py" />
+    <Content Include="standard_library\_pyio.py" />
+    <Content Include="standard_library\_strptime.py" />
+    <Content Include="standard_library\_threading_local.py" />
+    <Content Include="standard_library\_weakrefset.py" />
+    <Content Include="standard_library\__future__.py" />
+    <Content Include="standard_library\__phello__.foo.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
