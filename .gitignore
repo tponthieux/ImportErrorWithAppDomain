@@ -1,0 +1,25 @@
+## Windows ##
+Thumbs.db
+Desktop.ini
+
+## Mac ##
+.DS_Store
+
+## directories ##
+bin/
+obj/
+ignore/
+#packages/
+uploads/
+Scratch/
+/services
+log/
+
+## files ##
+*.suo
+*.user
+*.userprefs
+TestResult.xml
+build.VisualState.xml
+
+aws_credentials
